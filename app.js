@@ -40,7 +40,7 @@ operators.forEach(operator => {
         }
  
         AddAndClearOperations(operant);
-        lastOperant = operant;
+    lastOperant = operant;
     })
 });
 
@@ -50,25 +50,29 @@ function AddAndClearOperations(operatorSymbul) {
     firstDisplay.textContent = displayOperation;
     secondDisplay.textContent = '';
     input = '';
+    
 }
 
 
 function mathOperations() {
+    let firstNumber = parseFloat(result);
+    let secondNumber = parseFloat(input);
+
     switch(lastOperant) {
         case '+':
-            result = parseFloat(result) + parseFloat(input);
+            result = firstNumber + secondNumber;
             break;
         case '-':
-            result = parseFloat(result) - parseFloat(input);
+            result = firstNumber - secondNumber;
             break;
         case '*':
-            result = parseFloat(result) * parseFloat(input);
+            result = firstNumber * secondNumber;
             break;
         case '/':
-            result = (parseFloat(result) / parseFloat(input));
+            result = firstNumber / secondNumber === 0 ? (firstNumber / secondNumber) : (firstNumber / secondNumber).toFixed(3);
             break;
         case '%':
-            result = parseFloat(result) % parseFloat(input);
+            result = firstNumber % secondNumber;
             break;
     };
 };
