@@ -69,7 +69,7 @@ function mathOperations() {
             result = firstNumber * secondNumber;
             break;
         case '/':
-            result = firstNumber / secondNumber === 0 ? (firstNumber / secondNumber) : (firstNumber / secondNumber).toFixed(3);
+            result =(firstNumber % secondNumber === 0) ? (firstNumber / secondNumber) : (firstNumber / secondNumber).toFixed(3);
             break;
         case '%':
             result = firstNumber % secondNumber;
