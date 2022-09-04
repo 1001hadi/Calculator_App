@@ -14,6 +14,7 @@ let lastOperant = '';
 let dotElement = false;
 
 
+
 numbers.forEach(number => {
     number.addEventListener('click', e => {
         if(e.target.textContent === '.' && !dotElement){
@@ -23,12 +24,17 @@ numbers.forEach(number => {
         }
         input += e.target.textContent; 
         secondDisplay.textContent = input;
+        // result = null;
     })
 });
 
 
 operators.forEach(operator => {
     operator.addEventListener('click', e => {
+        if (result) {
+            input = result
+            result = null
+        }
         if(!input) return;
         dotElement = false;
         const operant = e.target.textContent;
@@ -45,12 +51,11 @@ operators.forEach(operator => {
 });
 
 
-function AddAndClearOperations(operatorSymbul) {
-    displayOperation += input + ' ' + operatorSymbul + ' ';
+function AddAndClearOperations(operatorSymbol) {
+    displayOperation += input + ' ' + operatorSymbol + ' ';
     firstDisplay.textContent = displayOperation;
     secondDisplay.textContent = '';
     input = '';
-    
 }
 
 
@@ -69,22 +74,24 @@ function mathOperations() {
             result = firstNumber * secondNumber;
             break;
         case '/':
-            result =(firstNumber % secondNumber === 0) ? (firstNumber / secondNumber) : (firstNumber / secondNumber).toFixed(3);
+            result = firstNumber / secondNumber;
             break;
         case '%':
-            result = firstNumber % secondNumber;
+            result = firstNumber % secondNumber; 
             break;
     };
 };
 
 
-equalBtn.addEventListener('click', e => {
+equalBtn.addEventListener('click', () => {
     if(!displayOperation || !input) return;
     dotElement = false;
     mathOperations();
     AddAndClearOperations('');
-    secondDisplay.textContent = result;
-    input = result;
+    secondDisplay.textContent = parseFloat(result.toFixed(3));
+    input = '';
+    result = secondDisplay.textContent;
+    result = null;
     displayOperation = '';
 });
 
@@ -93,6 +100,7 @@ clearAllOperations.addEventListener('click', e => {
     secondDisplay.textContent = '0';
     displayOperation = '';
     input = '';
+    result = '';
 });
 
 
