@@ -24,7 +24,6 @@ numbers.forEach(number => {
         }
         input += e.target.textContent; 
         secondDisplay.textContent = input;
-        // result = null;
     })
 });
 
