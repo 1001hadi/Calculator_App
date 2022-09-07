@@ -35,6 +35,7 @@ operators.forEach(operator => {
             input = result
             result = null
         }
+
         if(!input) return;
         dotElement = false;
         const operant = e.target.textContent;
@@ -89,9 +90,8 @@ equalBtn.addEventListener('click', () => {
     mathOperations();
     AddAndClearOperations('');
     secondDisplay.textContent = parseFloat(result.toFixed(3));
-    input = '';
+    input = result;
     result = secondDisplay.textContent;
-    result = null;
     displayOperation = '';
 });
 
