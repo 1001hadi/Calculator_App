@@ -30,11 +30,6 @@ numbers.forEach(number => {
 
 operators.forEach(operator => {
     operator.addEventListener('click', e => {
-        if (result) {
-            input = result
-            result = null
-        }
-
         if(!input) return;
         dotElement = false;
         const operant = e.target.textContent;
@@ -46,7 +41,7 @@ operators.forEach(operator => {
         }
  
         AddAndClearOperations(operant);
-    lastOperant = operant;
+        lastOperant = operant;
     })
 });
 
@@ -89,8 +84,8 @@ equalBtn.addEventListener('click', () => {
     mathOperations();
     AddAndClearOperations('');
     secondDisplay.textContent = parseFloat(result.toFixed(3));
-    input = result;
     result = secondDisplay.textContent;
+    input = '';
     displayOperation = '';
 });
 
