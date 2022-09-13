@@ -30,7 +30,7 @@ numbers.forEach(number => {
 
 operators.forEach(operator => {
     operator.addEventListener('click', e => {
-        if(!input) return;
+        if(!input) input = result;
         dotElement = false;
         const operant = e.target.textContent;
 
