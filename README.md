@@ -1,4 +1,4 @@
-Calcolator App
+# Calcolator App
 
 
 ![calculator_shot](https://user-images.githubusercontent.com/62669085/184928378-e7d52eba-1925-4e3c-9a6d-5a2d385ea9cd.png)
