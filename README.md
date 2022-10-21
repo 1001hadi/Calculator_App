@@ -1,8 +1,9 @@
 # Calcolator App
 
-
+#
 ![calculator_shot](https://user-images.githubusercontent.com/62669085/184928378-e7d52eba-1925-4e3c-9a6d-5a2d385ea9cd.png)
 
+## summary
 This calculator app is my 4th project in a software development mastermind program and it was the most challengeable one so far.
 I use HTML,CSS and JavaScript languages to code and beld this application.
 
